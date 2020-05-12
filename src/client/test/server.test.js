@@ -9,9 +9,9 @@ describe('Test root path', () => {
     });
 });
 
-describe('Text path "/predict"', () => {
+describe('Text path "/forecast"', () => {
     test('It should response the POST method', async () => {
-        const response = await request(app).post('/predict');
+        const response = await request(app).post('/forecast');
         expect(response.statusCode).toBe(200);
     });
 });

@@ -27,13 +27,13 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('dist'));
 
-// Callback function to complete GET '/all'
+// Callback function to complete GET 
 app.get('/', (req, res) => {
     res.sendFile('dist/index.html');
 });
 
 // Post Route
-app.post('/predict', async(req, res)=>{
+app.post('/forecast', async(req, res)=>{
     const body = req.body;
     projectData.minTemp = body.minTemp;
     projectData.maxTemp = body.maxTemp;
@@ -55,7 +55,8 @@ app.get('/save', async(req, res)=>{
 
 // Setup Server
 
-const server = app.listen(process.env.SERVER_PORT, listening);
+module.exports = app;
+app.listen(process.env.SERVER_PORT, listening);
 
 function listening() {
   console.log(`running on localhost: ${process.env.SERVER_PORT}`);

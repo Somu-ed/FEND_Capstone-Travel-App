@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel App</title>
 </head>
@@ -35,18 +34,18 @@
           </div>
 
         <div class="button-panel row">
-          <input type="submit" id="btn-add" value="Save Trip" />
+          <input type="submit" class="btn-add" value="Continue" />
         </div>
       </form>
     </section>
 
     <section id="trip-detail-section">
-      <div class="trip-info">
+      <div class="trip-info hide">
         <div>
           Trip Detail:
         </div>
         <div id="result-container">
-            <div class="containerImg">
+            <div class="city-image">
                 <img id="img" />
             </div>
             <div class="result">
@@ -68,9 +67,6 @@
                 <p id="return_date"></p>
             </div>
         </div>
-        <div>
-            <button id="btn-init">List Trip</button>
-          </div>
       </div>
 
     </section>
@@ -95,10 +91,10 @@
   <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
-      // Use the window load event to keep the page load performant
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js');
-      });
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
     }
   </script>
 

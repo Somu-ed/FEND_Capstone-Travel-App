@@ -21,9 +21,9 @@ export async function location(e){
 
      //api call to get the picture of place we searched from pixabay.
      const picture = await getData(process.env.PIX_URL + 'key=' + process.env.PIX_KEY + '&q=' + location + process.env.URL);
-    //  document.querySelector('.resultpart').classList.remove('hide');
+    document.querySelector('.trip-info').classList.remove('hide');
 
-         return postData('/predict',
+         return postData('/forecast',
           {
             minTemp: weather.data[0].min_temp,
             maxTemp:weather.data[0].max_temp,
@@ -58,9 +58,6 @@ export async function location(e){
                 document.getElementById('return_date').innerHTML = update.dateReturning;
             }
 
-            if(!update.picture){
-                img.src="https://unsplash.com/photos/uE2T1tCFsn8";
-            }
             img.setAttribute('src', `${update.picture}`);
 
         }
