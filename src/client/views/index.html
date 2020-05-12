@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel App</title>
 </head>
+
 <body>
-    
+
+  <div class="container">
+    <div class="headline">
+      <h1 id="page-title">Travel Planner</h1>
+    </div>
+
+    <section id="add-trip-section">
+
+
+      <form id="add-trip-form">
+        <div class="trip-summary row">
+          <label for="city"> My trip to:</label>
+          <input type="text" id="city" required placeholder=" Enter Location">
+        </div>
+
+        <div class="trip-departing row">
+          <label for="date">Departing:</label>
+          <input type="date" id="leave" required placeholder=" yyyy/mm/dd">
+        </div>
+
+        <div class="trip-returning row">
+            <label for="date">Returning:</label>
+            <input type="date" id="return" required placeholder=" yyyy/mm/dd">
+          </div>
+
+        <div class="button-panel row">
+          <input type="submit" id="btn-add" value="Save Trip" />
+        </div>
+      </form>
+    </section>
+
+    <section id="trip-detail-section">
+      <div class="trip-info">
+        <div>
+          Trip Detail:
+        </div>
+        <div id="result-container">
+            <div class="containerImg">
+                <img id="img" />
+            </div>
+            <div class="result">
+               <div class="titles">
+                <h3>Country:</h3>
+                <h3>City:</h3>
+                <h3>Weather:</h3>
+                <h3>Description:</h3>
+                <h3>Leaving Date:</h3>
+                <h3>Returning Date:</h3>
+            </div>
+            <!-- Place for info from API -->
+            <div class="infos">
+                <p id="con"></p>
+                <p id="place"></p>
+                <p id="weather"></p>
+                <p id="desc"></p>
+                <p id="leave_date"></p>
+                <p id="return_date"></p>
+            </div>
+        </div>
+        <div>
+            <button id="btn-init">List Trip</button>
+          </div>
+      </div>
+
+    </section>
+
+
+    <footer>
+      <div class="box">
+        <div class="box-item author">
+          <i>Develop by Somu-Ed.</i>
+        </div>
+        <div class="box-item other">
+          &copy;2020
+        </div>
+        <div class="box-item other">
+          Udacity
+        </div>
+
+      </div>
+
+    </footer>
+  </div>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+
+
 </body>
+
 </html>

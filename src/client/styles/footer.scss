@@ -1,0 +1,32 @@
+footer{
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 30px;
+}
+a{
+    color: aqua;
+}
+a:visited,a:hover{
+    color: blue;
+}
+
+.box{
+    display: flex;
+}
+.box div{
+    height: 50px;
+    line-height: 50px;
+}
+.box-item{
+    flex: 1;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+#page-title{
+    height: 100px;
+    line-height: 100px;
+}

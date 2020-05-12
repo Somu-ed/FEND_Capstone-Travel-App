@@ -33,10 +33,23 @@ app.get('/', (req, res) => {
 });
 
 // Post Route
-app.post('/add', (req, res) => {
-    projectData['date'] = req.body.date;
-    projectData['temp'] = req.body.temp;
-    projectData['content'] = req.body.content;
+app.post('/predict', async(req, res)=>{
+    const body = req.body;
+    projectData.minTemp = body.minTemp;
+    projectData.maxTemp = body.maxTemp;
+    projectData.description = body.description;
+    projectData.country = body.country;
+    projectData.cityName = body.cityName;
+    projectData.LeavingDate = body.LeavingDate;
+    projectData.ReturningDate = body.ReturningDate;
+    projectData.picture = body.picture;
+    console.log(body);
+    const jsonData = JSON.parse('{"response": "POST received"}');
+    res.send(jsonData);
+    console.log(jsonData);
+});
+// get request to /save and sending all datas saved
+app.get('/save', async(req, res)=>{
     res.send(projectData);
 });
 

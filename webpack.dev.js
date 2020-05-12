@@ -12,7 +12,7 @@ module.exports = {
         port: process.env.DEVSERVER_PORT,
         proxy: [
             {
-                context: ["/save", "/forecast"],
+                context: ["/save", "/predict"],
                 target: `http://localhost:${process.env.DEVSERVER_PORT}`
             }
         ]
