@@ -4,15 +4,7 @@
 let projectData = {};
 
 // setting up environment variables
-require('dotenv').config()
-function validateInputRequest(req, res, next) {
-    if(!req.body.text ) { // check for input validation
-        return res.status(400).json({
-           message: 'Invalid input'
-        })
-    } 
-    return next();
-}
+require('dotenv').config();
 
 // Express to run server and routes
 const express = require('express');
