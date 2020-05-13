@@ -1,7 +1,7 @@
 import '@babel/polyfill';
-import { location } from "../client/js/requests";
-import { getData } from "../client/js/requests";
-import { postData } from "../client/js/requests";
+import { location } from "../client/js/app";
+import { getData } from "../client/js/app";
+import { postData } from "../client/js/app";
 
 //Main Function
 describe('Test, the function "location()" should be a function' , () => {
